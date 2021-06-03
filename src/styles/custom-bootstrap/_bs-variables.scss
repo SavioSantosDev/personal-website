@@ -1,0 +1,311 @@
+@import "../my-variables";
+
+$white:    $color-white;
+$gray-100: $color-gray-1;
+$gray-200: $color-gray-2;
+$gray-300: $color-gray-3;
+$gray-400: $color-gray-4;
+$gray-500: $color-gray-5;
+$gray-600: $color-gray-6;
+$gray-700: $color-gray-7;
+$gray-800: $color-gray-8;
+$gray-900: $color-gray-9;
+$black:    $color-black;
+
+$primary:       $color-primary;
+$success:       $color-success;
+$danger:        $color-danger;
+$info:          $color-info;
+$warning:       $color-warning;
+$light:         $color-light;
+$dark:          $color-dark;
+
+$theme-colors: (
+  "primary":    $primary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+// The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
+// See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
+$min-contrast-ratio:   4.5 !default;
+
+// Customize the light and dark text colors for use in our color contrast function.
+$color-contrast-dark:      $dark;
+// $color-contrast-light:     $white !default;
+
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+// $enable-caret:                true !default;
+// $enable-rounded:              true !default;
+// $enable-shadows:              false !default;
+// $enable-gradients:            false !default;
+// $enable-transitions:          true !default;
+// $enable-reduced-motion:       true !default;
+// $enable-smooth-scroll:        true !default;
+// $enable-grid-classes:         true !default;
+// $enable-button-pointers:      true !default;
+$enable-rfs:                  false;
+// $enable-validation-icons:     true !default;
+// $enable-negative-margins:     false !default;
+// $enable-deprecation-messages: true !default;
+// $enable-important-utilities:  true !default;
+
+// Prefix for :root CSS variables
+
+$variable-prefix:             bs- !default;
+
+
+// Spacing
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacing-1,
+  2: $spacing-2,
+  3: $spacing-3,
+  4: $spacing-4,
+  5: $spacing-5,
+  6: $spacing-6,
+  7: $spacing-7,
+  8: $spacing-8,
+  9: $spacing-9
+);
+
+// Position
+$position-values: (
+  0: 0,
+  50: 50%,
+  100: 100%
+) !default;
+
+// Settings for the `<body>` element.
+$body-bg:                   $white !default;
+$body-color:                $color-text-in-light;
+$body-text-align:           null !default;
+
+
+// Style anchor elements.
+$link-color:                              $color-text-in-light;
+$link-decoration:                         none;
+$link-shade-percentage:                   20% !default;
+$link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
+$link-hover-decoration:                   underline;
+
+
+// Style p element.
+$paragraph-margin-bottom:   1rem !default;
+
+
+// Grid breakpoints
+$grid-breakpoints: (
+  xxs: $bp-xxs,
+  xs: $bp-xs,
+  sm: $bp-sm,
+  md: $bp-md,
+  lg: $bp-lg,
+  xl: $bp-xl,
+  xxl: $bp-xxl
+);
+
+// Define the maximum width of `.container` for different screen sizes.
+$container-max-widths: (
+  xs: $container-mw-xs,
+  sm: $container-mw-sm,
+  md: $container-mw-md,
+  lg: $container-mw-lg,
+  xl: $container-mw-xl,
+  xxl: $container-mw-xxl
+);
+
+// Set the number of columns and specify the width of the gutters.
+$grid-columns:                12 !default;
+$grid-gutter-width:           2rem;
+$grid-row-columns:            6 !default;
+
+$gutters: $spacers !default;
+
+// Container padding
+
+$container-padding-x: $grid-gutter-width / 2 !default;
+
+
+// Components
+
+// border width and color
+$border-width:  1px !default;
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+);
+$border-color:  $gray-200;
+
+// border radius
+$border-radius:               1rem;
+$border-radius-sm:            .25rem !default;
+$border-radius-lg:            4rem;
+$border-radius-pill:          50rem !default;
+
+// box shadows
+$box-shadow:               0 .75rem 1rem -.5rem rgba($black, .24);
+$box-shadow-lg:               0 2rem 4rem -2rem rgba($black, .24);
+// $box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
+// $box-shadow-inset:            inset 0 1px 2px rgba($black, .075) !default;
+
+$component-active-color:      $white !default;
+$component-active-bg:         $primary !default;
+
+
+// Typography
+
+$font-family-sans-serif:      Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+// stylelint-enable value-keyword-case
+$font-family-base:            var(--#{$variable-prefix}font-sans-serif) !default;
+$font-family-code:            var(--#{$variable-prefix}font-monospace) !default;
+
+$font-size-root:              null !default;
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-sm:                0.75rem;
+$font-size-lg:                1.25rem;
+
+$line-height-base:            1.5 !default;
+$line-height-sm:              $line-height-base;
+$line-height-lg:              $line-height-base;
+
+// Mobile(Mininum) - Tablet (768px - $bp-md) - Desktop (Maximun)
+$h1-font-size:                clamp(26px, 4.67vw, 40px); // 36px * 100 / $bp-md
+$h2-font-size:                clamp(20px, 3.90vw, 33px); // 30px * 100 / $bp-md
+$h3-font-size:                clamp(18px, 3.37vw, 28px); // 26px * 100 / $bp-md
+$h4-font-size:                clamp(16px, 2.60vw, 23px); // 20px * 100 / $bp-md
+$h5-font-size:                clamp(14px, 2.00vw, 19px); // 16px * 100 / $bp-md
+$h6-font-size:                clamp(12px, 1.82vw, 16px); // 14px * 100 / $bp-md
+
+$headings-margin-bottom:      $spacer / 2 !default;
+$headings-font-family:        Cardo;
+$headings-font-style:         null !default;
+$headings-font-weight:        700;
+$headings-line-height:        1.5;
+$headings-color:              $dark;
+
+$lead-font-size:              $h5-font-size;
+$lead-font-weight:            700;
+
+$small-font-size:             clamp(10px, 1.45vw, 12px);
+
+$text-muted:                  $gray-400;
+
+
+// Buttons + Forms
+$input-btn-padding-y:         16px;
+$input-btn-padding-x:         40px;
+$input-btn-font-family:       null !default;
+$input-btn-font-size:         $body-font-size;
+$input-btn-line-height:       $line-height-base !default;
+
+$input-btn-focus-width:         .25rem !default;
+$input-btn-focus-color-opacity: .25 !default;
+$input-btn-focus-color:         rgba($component-active-bg, $input-btn-focus-color-opacity) !default;
+$input-btn-focus-blur:          0 !default;
+$input-btn-focus-box-shadow:    0 0 $input-btn-focus-blur $input-btn-focus-width $input-btn-focus-color !default;
+
+$input-btn-padding-y-sm:      12px;
+$input-btn-padding-x-sm:      32px;
+$input-btn-font-size-sm:      $font-size-sm !default;
+
+$input-btn-padding-y-lg:      20px;
+$input-btn-padding-x-lg:      48px;
+$input-btn-font-size-lg:      $font-size-lg !default;
+
+$input-btn-border-width:      $border-width !default;
+// scss-docs-end input-btn-variables
+
+
+// Buttons
+$btn-font-weight:             700;
+$btn-box-shadow:              none;
+$btn-focus-width:             $input-btn-focus-width !default;
+$btn-focus-box-shadow:        0 1rem 2rem -1rem $component-active-bg;
+$btn-disabled-opacity:        .5;
+$btn-active-box-shadow:       none;
+
+$btn-link-color:              $link-color !default;
+$btn-link-hover-color:        $link-hover-color !default;
+$btn-link-disabled-color:     $gray-600 !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:           0;
+$btn-border-radius-sm:        0;
+$btn-border-radius-lg:        0;
+
+$btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+
+$btn-hover-bg-shade-amount:       15% !default;
+$btn-hover-bg-tint-amount:        15% !default;
+$btn-hover-border-shade-amount:   20% !default;
+$btn-hover-border-tint-amount:    10% !default;
+$btn-active-bg-shade-amount:      20% !default;
+$btn-active-bg-tint-amount:       20% !default;
+$btn-active-border-shade-amount:  25% !default;
+$btn-active-border-tint-amount:   10% !default;
+
+
+// Navbar
+$navbar-padding-y:                  1.5rem;
+$navbar-padding-x:                  1rem;
+
+$navbar-nav-link-padding-x:         .5rem !default;
+
+$navbar-brand-font-size:            3rem;
+// Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
+// $nav-link-height:                   $font-size-base * $line-height-base + $nav-link-padding-y * 2 !default;
+// $navbar-brand-height:               $navbar-brand-font-size * $line-height-base !default;
+// $navbar-brand-padding-y:            ($nav-link-height - $navbar-brand-height) / 2 !default;
+$navbar-brand-margin-end:           1rem !default;
+
+$navbar-light-color:                $dark;
+$navbar-light-hover-color:          $dark;
+$navbar-light-active-color:         $primary;
+$navbar-light-disabled-color:       $gray-400;
+
+
+// Tooltips
+// $tooltip-font-size:                 $font-size-sm !default;
+// $tooltip-max-width:                 200px !default;
+// $tooltip-color:                     $white !default;
+$tooltip-bg:                        $dark;
+$tooltip-border-radius:             .25rem;
+$tooltip-opacity:                   1;
+$tooltip-padding-y:                 .25rem;
+$tooltip-padding-x:                 .05rem;
+// $tooltip-margin:                    0 !default;
+
+$tooltip-arrow-width:               .75rem;
+$tooltip-arrow-height:              .5rem;
+// $tooltip-arrow-color:               $tooltip-bg !default;
+
+
+// Toasts
+// $toast-max-width:                   350px !default;
+$toast-padding-x:                   1rem;
+$toast-padding-y:                   1rem;
+$toast-font-size:                   $body-font-size;
+$toast-color:                       $body-color;
+$toast-background-color:            $white;
+$toast-border-width:                1px !default;
+$toast-border-color:                $gray-200;
+$toast-border-radius:               .25rem;
+$toast-box-shadow:                  $box-shadow-lg;
+$toast-spacing:                     $container-padding-x !default;
+
+$toast-header-color:                $dark;
+$toast-header-background-color:     $white;
+$toast-header-border-color:         $gray-200;

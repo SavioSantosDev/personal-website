@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+// Bootstrap 5, com as variáveis já customizadas.
+@import "./styles/custom-bootstrap/bootstrap.scss";
+
+// Material Icons para os ícones mais simples.
+@import '~material-icons/iconfont/material-icons.css';
+
+::selection {
+  background-color: $color-primary;
+  color: white;
+}
+
+body, button, textarea, input {
+  font-size: $body-font-size;
+}
+
+

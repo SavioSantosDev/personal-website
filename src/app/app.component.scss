@@ -1,0 +1,23 @@
+@import "../styles/my-variables";
+
+
+svg {
+
+  .brand-text { fill: currentColor; }
+  .brand-symbol {
+    fill: $color-primary;
+    transition: 1s;
+  }
+  .brand-rect {
+    fill: transparent;
+    stroke: $color-primary;
+    transition: 1s;
+  }
+
+  &:hover{
+    .brand-symbol { fill: white; }
+    .brand-rect {
+      fill: $color-primary;
+    }
+  }
+}

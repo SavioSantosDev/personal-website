@@ -1,0 +1,79 @@
+/*
+ * COLOR SYSTEM
+ */
+
+// Primary colors
+$color-primary:   #1571B5;
+
+// Gray colors
+$color-white:  #FFFFFF;
+$color-gray-1: #F7F9FA;
+$color-gray-2: #DFE6EB;
+$color-gray-3: #C6CDD1;
+$color-gray-4: #A1ACB3;
+$color-gray-5: #8A9499;
+$color-gray-6: #737980;
+$color-gray-7: #575F66;
+$color-gray-8: #2D3740;
+$color-gray-9: #0D141A;
+$color-black:  #000000;
+
+// Support colors
+$color-success:   #198754;
+$color-danger:    #DC3545;
+$color-warning:   #FFC107;
+$color-info:      #0DCAF0;
+
+$color-light:           $color-gray-1;
+$color-dark:            $color-gray-9;
+$color-text-in-light:   $color-gray-8;
+$color-text-muted:      $color-gray-4;
+
+// Gradients
+$gradient-primary: linear-gradient(90deg, #1571B5 0%, #0085E8 100%);
+
+
+/**
+ * GRID
+ * Mobile First
+ */
+
+// Breakpoints
+$bp-xxs: 0;
+$bp-xs: 480px;
+$bp-sm: 600px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+$bp-xxl: 1600px;
+
+// Container max-width
+$container-mw-xs: 416px;
+$container-mw-sm: 576px;
+$container-mw-md: 720px;
+$container-mw-lg: 960px;
+$container-mw-xl: 1152px;
+$container-mw-xxl: 1440px;
+
+$grid-gutter: 2rem;
+
+/**
+ * SPACING
+ * Used by margins, paddings and gutters
+ */
+$spacing-base: 16px;
+
+$spacing-1: $spacing-base / 4;    // 4px
+$spacing-2: $spacing-base / 2;    // 8px
+$spacing-3: $spacing-base;        // 16px
+$spacing-4: $spacing-base * 1.5;  // 24px
+$spacing-5: $spacing-base * 2;    // 32px
+$spacing-6: $spacing-base * 3;    // 48px
+$spacing-7: $spacing-base * 4;    // 64px
+$spacing-8: $spacing-base * 6;    // 96px
+$spacing-9: $spacing-base * 9;    // 144px
+
+
+
+// Tamahno da fonte do body
+$body-font-size:    clamp(12px, 1.82vw, 16px);
