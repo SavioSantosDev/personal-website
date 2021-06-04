@@ -96,7 +96,7 @@ $link-color:                              $color-text-in-light;
 $link-decoration:                         none;
 $link-shade-percentage:                   20% !default;
 $link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
-$link-hover-decoration:                   underline;
+// $link-hover-decoration:                   null;
 
 
 // Style p element.
@@ -246,7 +246,10 @@ $btn-border-radius:           0;
 $btn-border-radius-sm:        0;
 $btn-border-radius-lg:        0;
 
-$btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+$btn-transition:      color .15s ease-in-out,
+                      background-color .15s ease-in-out,
+                      border-color .15s ease-in-out,
+                      box-shadow .15s ease-in-out !default;
 
 $btn-hover-bg-shade-amount:       15% !default;
 $btn-hover-bg-tint-amount:        15% !default;
