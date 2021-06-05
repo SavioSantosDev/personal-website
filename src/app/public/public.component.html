@@ -1,7 +1,8 @@
 <app-navbar></app-navbar>
 
 <main>
-  <app-about></app-about>
+  <app-modal-curriculum-preview></app-modal-curriculum-preview>
+  <app-about (onOpenCVPreview)="openCVPreview()"></app-about>
 </main>
 
 <app-footer></app-footer>
