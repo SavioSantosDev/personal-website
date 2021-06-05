@@ -1,29 +1,26 @@
-@import "../../../../styles/my-variables";
-
-
 .brand {
 
   .brand-text { fill: currentColor; }
   .brand-symbol {
-    fill: $color-primary;
+    fill: var(--bs-primary);
     transition: fill .15s ease-in-out;
   }
   .brand-rect {
     fill: transparent;
-    stroke: $color-primary;
+    stroke: var(--bs-primary);
     transition: fill .15s ease-in-out;
   }
 
   &:hover{
     .brand-symbol { fill: white; }
     .brand-rect {
-      fill: $color-primary;
+      fill: var(--bs-primary);
     }
   }
 }
 
 .btn {
-  box-shadow: 0 1rem 2rem -1rem rgba($color-primary, .6);
+  box-shadow: 0 1rem 2rem -1rem rgba(var(--bs-primary), .6);
 }
 
 .custom-nav-link {
@@ -39,13 +36,13 @@
     left: -100%;
     width: 100%;
     height: 2px;
-    background-color: $color-primary;
+    background-color: var(--bs-primary);
     transition: left .15s ease-in-out;
   }
 
   &:hover:not(.active)::after { left: -50%; text-decoration: none; }
   &.active {
-    color: $color-primary;
+    color: var(--bs-primary);
     font-weight: bold;
 
     &::after {
