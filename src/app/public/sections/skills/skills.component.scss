@@ -1,0 +1,82 @@
+@import "../../../../styles/my-variables";
+
+// The main icon (larger) size for each breakpoint
+$breakpoints-and-main-icon-size: (
+  (0, 56px),
+  ($bp-xs, 72px),
+  ($bp-sm, 80px),
+  ($bp-xl, 88px),
+  ($bp-xxl, 96px),
+);
+// For each breakpoint there are 5 icons sizes variation
+$icons-sizes-variation: 5;
+
+/**
+ * .size-1 { width: x, height: x; }
+ * .size-2 { width: x - 8, height: x - 8; }
+ * .size-3 { width: (x - 8) - 8, height: (x - 8) - 8; }
+ * ...
+ */
+@mixin teste ($icon-size) {
+  $size: $icon-size;
+  @for $i from 1 through $icons-sizes-variation {
+    .size-#{$i} {
+      width: $size;
+      height: $size;
+    }
+    $size: $size - 8px;
+  }
+}
+
+@mixin set-icons-size-for-each-breakpoint {
+  @each $map in $breakpoints-and-main-icon-size {
+    $breakpoint: nth($map, 1);
+    $icon-size: nth($map, 2);
+
+    @media(min-width: $breakpoint) {
+      @include teste($icon-size);
+    }
+  }
+}
+
+
+.skills-icons {
+  padding-top: 100%;
+  position: relative;
+
+  img {
+    position: absolute;
+    display: block;
+    box-shadow: 0px 12px 16px -8px rgba(0, 0, 0, 0.24);
+    transition: box-shadow .15s ease-in-out;
+
+    &:hover {
+      box-shadow: 0px 12px 16px -8px rgba(0, 0, 0, 0.24),
+                  0px 6px 12px -4px rgba(0, 0, 0, 0.48);
+    }
+  }
+
+  @include set-icons-size-for-each-breakpoint;
+
+  #css { bottom: 0; left: 8%; transform: rotate(-15deg) translateY(-2px); }
+  #html { bottom: -5%; right: 0; transform: rotate(30deg); }
+  #figma { top: 18%; right: 18%; transform: rotate(15deg); }
+
+  #sass { top: 0; right: 0; transform: rotate(-15deg) translate(-5px, -5px); }
+  #bootstrap { top: 20%; left: 30%; transform: rotate(-15deg); }
+  #angular { bottom: 20%; left: 48%; }
+
+  #node { top: 30%; left: 0; transform: translateX(-2px); }
+  #vscode { top: 50%; right: 0; transform: rotate(-30deg) translateY(-50%); }
+  #typescript { top: 0; left: 0; transform: rotate(-30deg) translate(-1px, -3px); }
+
+  #javascript { top: 52%; left: 15%; transform: rotate(-15deg); }
+  #git { top: 1%; left: 20%; }
+  #github { top: 65%; right: 12%; }
+
+  #evernote { bottom: 25%; left: 0; transform: translateX(-5px); }
+  #illustrator { top: 0; left: 54%; transform: translateY(-4px); }
+  #mongodb { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+  #photoshop { bottom: 0; left: 50%; transform: translateX(-50%); }
+
+}
