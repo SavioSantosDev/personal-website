@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ModalCertificatesComponent } from './components/modal-certificates/modal-certificates.component';
 
 import { ModalCurriculumPreviewComponent } from './components/modal-curriculum-preview/modal-curriculum-preview.component';
 
@@ -10,6 +11,7 @@ import { ModalCurriculumPreviewComponent } from './components/modal-curriculum-p
 export class PublicComponent implements OnInit {
 
   @ViewChild(ModalCurriculumPreviewComponent) cvModal?: ModalCurriculumPreviewComponent;
+  @ViewChild(ModalCertificatesComponent) certificatesModal?: ModalCertificatesComponent;
 
   constructor() { }
 
@@ -18,5 +20,9 @@ export class PublicComponent implements OnInit {
 
   openCVPreview(): void {
     this.cvModal?.showModal();
+  }
+
+  openCertificates(): void {
+    this.certificatesModal?.showModal();
   }
 }

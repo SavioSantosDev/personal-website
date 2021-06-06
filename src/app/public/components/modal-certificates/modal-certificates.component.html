@@ -1,0 +1,38 @@
+<article class="modal fade" tabindex="-1" aria-hidden="true" #certificatesModal>
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+
+      <header class="modal-header">
+        <h3 class="modal-title">Certificados</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Fechar modal"></button>
+      </header>
+
+      <div class="modal-body bg-light">
+        <figure class="mb-0 position-relative w-100 h-100">
+          <ng-container *ngFor="let certificate of certificates; let i = index">
+            <img
+              *ngIf="i === currentSlide"
+              [src]="certificate.imagePath"
+              [alt]="certificate.name"
+              class="position-absolute top-0 start-0 w-100 h-100  slide"
+              @carouselAnimation
+            />
+          </ng-container>
+
+          <!-- controls -->
+          <button type="button" class="control prev" title="Slide anterior" (click)="onPreviousClick()">
+            <span class="arrow left"></span>
+          </button>
+          <button type="button" class="control next" title="Próximo slide" (click)="onNextClick()">
+            <span class="arrow right"></span>
+          </button>
+        </figure>
+      </div>
+
+      <footer class="modal-footer">
+        <button type="button" class="btn" data-bs-dismiss="modal" title="Fechar modal">Voltar</button>
+        <a [href]="certificates[currentSlide].url" target="_blank" title="Certificado original" class="btn btn-primary">Link de acesso</a>
+      </footer>
+    </div>
+  </div>
+</article>

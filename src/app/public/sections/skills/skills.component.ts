@@ -1,4 +1,4 @@
-import { Component, ElementRef, AfterViewInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, QueryList, ViewChildren, EventEmitter, Output } from '@angular/core';
 import * as Bootstrap from 'bootstrap';
 
 @Component({
@@ -8,7 +8,7 @@ import * as Bootstrap from 'bootstrap';
 })
 export class SkillsComponent implements AfterViewInit {
 
-  @ViewChildren('skillIcon') skillIcons?: QueryList<ElementRef>;
+  @ViewChildren('skillIcon') private skillIcons?: QueryList<ElementRef>;
   icons = [
     { class: 'size-1', id: 'css', src: 'assets/icons/icons.svg#css3', alt: 'CSS 3' },
     { class: 'size-1', id: 'html', src: 'assets/icons/icons.svg#html5', alt: 'HTML 5' },
@@ -26,7 +26,9 @@ export class SkillsComponent implements AfterViewInit {
     { class: 'size-5', id: 'illustrator', src: 'assets/icons/icons.svg#illustrator', alt: 'Illustrator' },
     { class: 'size-5', id: 'mongodb', src: 'assets/icons/icons.svg#mongodb', alt: 'MongoDB' },
     { class: 'size-5', id: 'photoshop', src: 'assets/icons/icons.svg#photoshop', alt: 'Photoshop' },
-  ]
+  ];
+
+  @Output() onOpenCertificates = new EventEmitter();
 
   constructor() { }
 
@@ -38,6 +40,10 @@ export class SkillsComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.initializeTooltips();
+  }
+
+  openCertificates() {
+    this.onOpenCertificates.emit();
   }
 
 }
