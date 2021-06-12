@@ -10,8 +10,11 @@ import { ModalCurriculumPreviewComponent } from './components/modal-curriculum-p
 })
 export class PublicComponent implements OnInit {
 
-  @ViewChild(ModalCurriculumPreviewComponent) cvModal?: ModalCurriculumPreviewComponent;
-  @ViewChild(ModalCertificatesComponent) certificatesModal?: ModalCertificatesComponent;
+  @ViewChild(ModalCurriculumPreviewComponent)
+  private readonly cvModal?: ModalCurriculumPreviewComponent;
+
+  @ViewChild(ModalCertificatesComponent)
+  private readonly certificatesModal?: ModalCertificatesComponent;
 
   constructor() { }
 

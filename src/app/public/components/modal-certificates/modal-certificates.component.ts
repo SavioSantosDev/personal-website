@@ -2,7 +2,7 @@ import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import * as Bootstrap from 'bootstrap';
 
-import { scaleIn, scaleOut } from 'src/app/shared/carousel.animations';
+import { scaleIn, scaleOut } from '../../../shared/carousel.animations';
 
 @Component({
   selector: 'app-modal-certificates',

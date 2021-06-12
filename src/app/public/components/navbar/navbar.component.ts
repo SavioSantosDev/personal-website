@@ -8,7 +8,6 @@ import * as Bootstrap from 'bootstrap';
 })
 export class NavbarComponent implements AfterViewInit {
 
-  navbarCollapse = true;
   @ViewChild('menuCollapse') private menuCollapsRef?: ElementRef;
   private menuCollapse?: Bootstrap.Collapse;
 
