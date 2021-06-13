@@ -8,24 +8,40 @@ import * as Bootstrap from 'bootstrap';
 })
 export class NavbarComponent implements AfterViewInit {
 
-  @ViewChild('menuCollapse') private menuCollapsRef?: ElementRef;
+  @ViewChild('menuCollapse') menuCollapseRef?: ElementRef;
   private menuCollapse?: Bootstrap.Collapse;
 
   constructor() {
   }
 
+  private initializeMenuCollapse(): void {
+    if (this.menuCollapseRef) {
+      this.menuCollapse = new Bootstrap.Collapse(this.menuCollapseRef.nativeElement, {
+        toggle: false,
+      });
+      return;
+    }
+    this.menuCollapse = undefined;
+  }
+
   ngAfterViewInit() {
-    this.menuCollapse = new Bootstrap.Collapse(this.menuCollapsRef?.nativeElement, {
-      toggle: false,
-    });
+    this.initializeMenuCollapse();
   }
 
-  toggleMenu() {
-    this.menuCollapse?.toggle();
+  toggleMenu(): boolean {
+    if (this.menuCollapse) {
+      this.menuCollapse.toggle();
+      return true;
+    }
+    return false;
   }
 
-  hiddenMenu() {
-    this.menuCollapse?.hide();
+  hiddenMenu(): boolean {
+    if (this.menuCollapse) {
+      this.menuCollapse.hide();
+      return true;
+    }
+    return false;
   }
 
 }
